@@ -1,0 +1,26 @@
+#include "ElDepartamento.h"
+
+// classe de encapsulamento para a classe departamento
+
+ElDepartamento::ElDepartamento() {}
+ElDepartamento::~ElDepartamento() {}
+
+void ElDepartamento::setDepartamento(Departamento *pd)
+{
+	pDepartamento = pd;
+}
+Departamento* ElDepartamento::getDepartamento()
+{
+	return pDepartamento;
+}
+string ElDepartamento::getNome()
+{
+	return pDepartamento->getNome();
+}
+int ElDepartamento::getId()
+{
+    return pDepartamento->getId();
+}
+Universidade* ElDepartamento::getUniversidade() {
+	return pDepartamento->getUniversidade();
+}

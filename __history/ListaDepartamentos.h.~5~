@@ -1,0 +1,20 @@
+#pragma once
+#include "ElDepartamento.h"
+#include "Departamento.h"
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <iostream>
+#include <list>
+
+class ListaDepartamentos
+{
+private:
+public:
+	ListaDepartamentos(int nd = 1000);
+	~ListaDepartamentos();
+	void incluaDepartamento(Departamento* pdi);
+	Departamento* localizar(const char* n);
+	std::list<ElDepartamento*> LDepartamentos;
+};

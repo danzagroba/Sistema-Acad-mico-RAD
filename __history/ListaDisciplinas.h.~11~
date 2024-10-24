@@ -1,0 +1,16 @@
+#pragma once
+#include <list>
+
+class Disciplina;
+
+class ListaDisciplinas
+{
+private:
+public:
+	ListaDisciplinas(int nd = 1000);
+	~ListaDisciplinas();
+	void incluaDisciplina(Disciplina* pdi);
+	Disciplina* localizar(const char* n);
+	std::list<Disciplina*> LDisciplinas;
+	list<Disciplina*>::iterator IteradorLDisciplinas;
+};

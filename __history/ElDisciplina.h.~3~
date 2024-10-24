@@ -1,0 +1,18 @@
+#pragma once
+#include "Disciplina.h"
+#include <string>
+
+using namespace std;
+
+class ElDisciplina
+{
+private:
+	Disciplina* pDisciplina;
+public:
+	ElDisciplina();
+	~ElDisciplina();
+	void setDisciplina(Disciplina* pa);
+	Disciplina* getDisciplina();
+	string getNome();
+	Departamento* getDepartamento();
+};

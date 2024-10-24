@@ -1,0 +1,21 @@
+#include "ListaAlunos.h"
+#include "Disciplina.h"
+#include <fstream>
+using std::ofstream;
+using std::ifstream;
+#include <iostream>
+using std::cout;
+using std::endl;
+
+ListaAlunos::ListaAlunos(int na)
+{
+
+}
+ListaAlunos::~ListaAlunos()
+{
+}
+// inclui um novo aluno se houver espaco e a entrada for valida
+void ListaAlunos::incluaAluno(Aluno* pa)
+{
+	LAlunos.push_back(pa);
+}

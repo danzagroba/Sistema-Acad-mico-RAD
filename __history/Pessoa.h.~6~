@@ -1,0 +1,17 @@
+#pragma once
+#include "Universidade.h"
+#include <string>
+
+using namespace std;
+
+class Pessoa
+{
+protected:
+	string nomeP;
+public:
+	Pessoa(int id);
+	~Pessoa();
+	void inicializa(int diaNa, int mesNa, int anoNa, const char* nome);
+	void setNome(const char* n);
+	string getNome();
+};

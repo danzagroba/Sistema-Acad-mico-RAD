@@ -1,0 +1,25 @@
+#pragma once
+#include "Universidade.h"
+#include "Disciplina.h"
+#include <string>
+using namespace std;
+
+
+class Departamento
+{
+private:
+	string nome;
+	Universidade* pUniv;
+	ListaDisciplinas* pObjLDisciplinas;
+	int id;
+public:
+	Departamento(int id);
+	~Departamento();
+	void setNome(const char* n);
+	string getNome();
+	void setUniversidade(Universidade* pu);
+	Universidade* getUniversidade();
+	void incluaDisciplina(Disciplina* pdi);
+	void listeDisciplinas();
+	int getId();
+};

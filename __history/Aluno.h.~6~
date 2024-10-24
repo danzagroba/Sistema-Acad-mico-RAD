@@ -1,0 +1,25 @@
+#pragma once
+#include <string>
+
+using namespace std;
+
+class Aluno : public Pessoa
+{
+private:
+	int RA;
+	Disciplina* pDiscAssociada;
+	int id;
+	string name;
+public:
+	Aluno(int i);
+	~Aluno();
+	void setNome(const char* n);
+
+	string getNome();
+	void setRA(int ra);
+	int getRA();
+	void setDisciplina(Disciplina* pd);
+	Disciplina* getDisciplina();
+	void setId(int i);
+	int getId();
+};

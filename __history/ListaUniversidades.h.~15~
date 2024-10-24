@@ -1,0 +1,17 @@
+#pragma once
+#include <iostream>
+#include <list>
+
+class Universidade;
+
+class ListaUniversidades
+{
+private:
+public:
+	ListaUniversidades(int nd = 1000);
+	~ListaUniversidades();
+	void incluaUniversidade(Universidade* pdi);
+	Universidade* localizar(const char* univ);
+	std::list<Universidade*> LUniversidades;
+    list<Universidade*>::iterator IteradorLUniversidades;
+};

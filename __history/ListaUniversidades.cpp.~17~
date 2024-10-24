@@ -1,0 +1,30 @@
+#include "ListaUniversidades.h"
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+
+ListaUniversidades::ListaUniversidades(int nd)
+{
+}
+ListaUniversidades::~ListaUniversidades()
+{
+
+}
+// inclui uma nova universidade se houver espaco e a entrada for valida
+void ListaUniversidades::incluaUniversidade(Universidade* pdi)
+{
+	ElUniversidade* paux;
+	paux = new ElUniversidade();
+	paux->setUniversidade(pdi);
+	LUniversidades.push_back(paux);
+}
+
+Universidade* ListaUniversidades::localizar(const char* univ)
+{
+	IteradorLUniversidades = LUniversidades.begin();
+	while(((*(IteradorLUniversidades))->getNome().compare(univ))){
+		IteradorLUniversidades++;
+	}
+	return (*(IteradorLUniversidades))->getUniversidade();
+}

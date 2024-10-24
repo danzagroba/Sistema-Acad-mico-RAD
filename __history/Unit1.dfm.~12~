@@ -1,0 +1,163 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 303
+  ClientWidth = 575
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = Menu
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 20
+    Top = 24
+    Width = 200
+    Height = 25
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object Label2: TLabel
+    Left = 20
+    Top = 136
+    Width = 200
+    Height = 25
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object Edit1: TEdit
+    Left = 20
+    Top = 80
+    Width = 517
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+  end
+  object Edit2: TEdit
+    Left = 20
+    Top = 192
+    Width = 517
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+  end
+  object CadastrarBotao: TButton
+    Left = 388
+    Top = 240
+    Width = 149
+    Height = 55
+    Caption = 'Cadastrar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+  end
+  object Menu: TMainMenu
+    Left = 528
+    Top = 16
+    object Cadastrar1: TMenuItem
+      Caption = 'Cadastrar'
+      object Universidade1: TMenuItem
+        Caption = 'Universidade'
+        OnClick = Universidade1Click
+      end
+      object Departamento1: TMenuItem
+        Caption = 'Departamento'
+        OnClick = Departamento1Click
+      end
+      object Departamento2: TMenuItem
+        Caption = 'Disciplina'
+        OnClick = Departamento2Click
+      end
+      object Universidade2: TMenuItem
+        Caption = 'Aluno'
+        OnClick = Universidade2Click
+      end
+    end
+    object Listar1: TMenuItem
+      Caption = 'Listar'
+      object udo1: TMenuItem
+        Caption = 'Tudo'
+      end
+      object Listar2: TMenuItem
+        Caption = 'Universidade'
+      end
+      object Departamento3: TMenuItem
+        Caption = 'Departamento'
+      end
+      object Departamento4: TMenuItem
+        Caption = 'Disciplina'
+      end
+      object Professor2: TMenuItem
+        Caption = 'Aluno'
+      end
+    end
+    object Salvar1: TMenuItem
+      Caption = 'Salvar'
+      object Salvar2: TMenuItem
+        Caption = 'Tudo'
+      end
+      object Universidades1: TMenuItem
+        Caption = 'Universidades'
+      end
+      object Universidades2: TMenuItem
+        Caption = 'Departamentos'
+      end
+      object Disciplinas1: TMenuItem
+        Caption = 'Disciplinas'
+      end
+      object Disciplinas2: TMenuItem
+        Caption = 'Alunos'
+      end
+    end
+    object Recuperar1: TMenuItem
+      Caption = 'Recuperar'
+      object Recuperar2: TMenuItem
+        Caption = 'Tudo'
+      end
+      object Universidades3: TMenuItem
+        Caption = 'Universidades'
+      end
+      object Universidades4: TMenuItem
+        Caption = 'Departamentos'
+      end
+      object Disciplinas3: TMenuItem
+        Caption = 'Disciplinas'
+      end
+      object Disciplinas4: TMenuItem
+        Caption = 'Alunos'
+      end
+    end
+  end
+end

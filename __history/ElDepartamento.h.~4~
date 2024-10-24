@@ -1,0 +1,16 @@
+#pragma once
+#include "Departamento.h"
+
+class ElDepartamento
+{
+private:
+	Departamento* pDepartamento;
+public:
+	ElDepartamento();
+	~ElDepartamento();
+	void setDepartamento(Departamento* pa);
+	Departamento* getDepartamento();
+	string getNome();
+    int getId();
+	Universidade* getUniversidade();
+};

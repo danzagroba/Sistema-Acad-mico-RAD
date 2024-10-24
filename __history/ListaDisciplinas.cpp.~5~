@@ -1,0 +1,36 @@
+#include "ListaDisciplinas.h"
+#include <iostream>
+using std::cout;
+using std::endl;
+
+ListaDisciplinas::ListaDisciplinas(int nd)
+{
+}
+ListaDisciplinas::~ListaDisciplinas()
+{
+}
+// inclui uma nova disciplina se houver espaco e a entrada for valida
+void ListaDisciplinas::incluaDisciplina(Disciplina* pdi)
+{
+	ElDisciplina* paux;
+	paux = new ElDisciplina();
+	paux->setDisciplina(pdi);
+
+	LDisciplinas.push_back(paux);
+}
+
+// localiza uma disciplina de nome "n" na lista de disciplinas
+Disciplina* ListaDisciplinas::localizar(const char* n)
+{
+	ElDisciplina* paux;
+	paux = pElDisciplinaPrim;
+	while (paux != NULL)
+	{
+		if (0 == strcmp(n, paux->getNome()))
+		{
+			return paux->getDisciplina();
+		}
+		paux = paux->pProx;
+	}
+	return NULL;
+}

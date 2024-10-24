@@ -1,0 +1,20 @@
+#pragma once
+#include "ListaDepartamentos.h"
+#include <iostream>
+#include <string>
+
+class Universidade
+{
+private:
+	string nome;
+	ListaDepartamentos ObjLDepartamentos;
+	int id;
+public:
+	Universidade(int id);
+	~Universidade();
+	void setNome(string n);
+	string* getNome();
+	void incluaDepartamento(Departamento* pd);
+	void listeDepartamentos();
+	int getId();
+};

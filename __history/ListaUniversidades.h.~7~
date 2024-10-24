@@ -1,0 +1,17 @@
+#pragma once
+#include "ElUniversidade.h"
+#include "Universidade.h"
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+
+class ListaUniversidades
+{
+private:
+public:
+	ListaUniversidades(int nd = 1000);
+	~ListaUniversidades();
+	void incluaUniversidade(Universidade* pdi);
+	list<ElUniversidade*> LUniversidades;
+};

@@ -1,0 +1,66 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma link "Unit3"
+#pragma link "Unit2"
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	Sistema = new Principal();
+	Frame31->Sistema = Sistema;
+	Frame21->Sistema = Sistema;
+	this->Frame21->Visible=False;
+	this->Frame31->Visible=False;
+}
+
+void __fastcall TForm1::Universidade1Click(TObject *Sender)
+{
+	tirarVisible();
+	this->Frame31->Visible=True;
+	this->Frame31->Enabled=True;
+	this->Frame31->setCadastro(0);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Departamento1Click(TObject *Sender)
+{
+	tirarVisible();
+	this->Frame31->Visible=True;
+	this->Frame31->Enabled=True;
+	this->Frame31->setCadastro(1);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Departamento2Click(TObject *Sender)
+{
+	tirarVisible();
+	this->Frame31->Visible=True;
+	this->Frame31->Enabled=True;
+	this->Frame31->setCadastro(2);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Universidade2Click(TObject *Sender)
+{
+	tirarVisible();
+	this->Frame31->Visible=True;
+	this->Frame31->Enabled=True;
+	this->Frame31->setCadastro(3);
+}
+
+void TForm1::tirarVisible()
+{
+	this->Frame21->Visible=False;
+	this->Frame31->Visible=False;
+}
+//---------------------------------------------------------------------------
+
+
