@@ -8,13 +8,13 @@ object Frame3: TFrame3
     Left = 16
     Top = 24
     Width = 3
-    Height = 13
+    Height = 15
   end
   object Label2: TLabel
     Left = 16
     Top = 144
     Width = 3
-    Height = 13
+    Height = 15
   end
   object Label3: TLabel
     Left = 16
@@ -33,14 +33,14 @@ object Frame3: TFrame3
     Left = 16
     Top = 72
     Width = 537
-    Height = 21
+    Height = 23
     TabOrder = 0
   end
   object Edit2: TEdit
     Left = 16
     Top = 200
     Width = 537
-    Height = 21
+    Height = 23
     TabOrder = 1
   end
   object Button1: TButton
@@ -56,7 +56,7 @@ object Frame3: TFrame3
     Left = 56
     Top = 249
     Width = 145
-    Height = 21
+    Height = 23
     TabOrder = 3
   end
 end

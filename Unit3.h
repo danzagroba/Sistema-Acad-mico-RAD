@@ -24,7 +24,7 @@ private:
 		// User declarations
 	int type;
 public:		// User declarations
-	void TFrame3::setCadastro(int type);
+	void setCadastro(int type);
 	__fastcall TFrame3(TComponent* Owner);
     Principal* Sistema;
 };

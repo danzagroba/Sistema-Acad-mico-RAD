@@ -1,4 +1,5 @@
 #pragma once
+#include <vcl.h>
 #include "ListaUniversidades.h"
 #include "ListaDepartamentos.h"
 #include "ListaDisciplinas.h"

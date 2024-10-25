@@ -36,9 +36,17 @@ Principal::~Principal() {
 // funcoes para cadastro de novos objetos
 void Principal::CadUniversidade(const char* univ)
 {
-	Universidade* puniv = new Universidade(cont_idUniv++);
-	puniv->setNome(univ);
-	LUniversidades.incluaUniversidade(puniv);
+	if(univ != NULL && std::strcmp(univ, "") != 0)
+	{
+		Universidade* puniv = new Universidade(cont_idUniv++);
+		puniv->setNome(univ);
+		LUniversidades.incluaUniversidade(puniv);
+	}
+	else
+	{
+        // Mensagem de aviso
+		MessageDlg("O campo da universidade está vazio", mtWarning, TMsgDlgButtons() << mbOK, 0);
+	}
 }
 
 void Principal::CadDepartamento(const char* univ, const char* depart)

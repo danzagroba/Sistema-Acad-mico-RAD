@@ -11,8 +11,6 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   Menu = Menu
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   inline Frame31: TFrame3
     Left = 8
@@ -25,6 +23,28 @@ object Form1: TForm1
     ExplicitLeft = 8
     ExplicitTop = 8
     ExplicitHeight = 287
+    inherited Label1: TLabel
+      Height = 13
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitHeight = 13
+    end
+    inherited Label2: TLabel
+      Height = 13
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitHeight = 13
+    end
+    inherited Label3: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited Edit1: TEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited Edit2: TEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited Edit3: TEdit
+      StyleElements = [seFont, seClient, seBorder]
+    end
   end
   inline Frame21: TFrame2
     Left = -2
@@ -35,6 +55,20 @@ object Form1: TForm1
     ExplicitLeft = -2
     ExplicitWidth = 659
     ExplicitHeight = 353
+    inherited Label1: TLabel
+      Width = 31
+      Height = 13
+      StyleElements = [seFont, seClient, seBorder]
+      ExplicitWidth = 31
+      ExplicitHeight = 13
+    end
+    inherited ListBox1: TListBox
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited ListBox2: TListBox
+      ItemHeight = 13
+      StyleElements = [seFont, seClient, seBorder]
+    end
   end
   object Menu: TMainMenu
     Left = 528
