@@ -2,6 +2,9 @@
 *.dat
 *.exe
 /Win32/
+/.vscode/
+/__history
+__history/
 /__history/
 Project1.cbproj.local
 *.~cpp
