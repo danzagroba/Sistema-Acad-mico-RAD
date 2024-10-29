@@ -61,9 +61,11 @@ void __fastcall TFrame3::Button1Click(TObject *Sender)
 	switch (this->type) {
 	case 0:
 		this->Sistema->CadUniversidade(NomeUniv.c_str());
+        this->Edit1->Text = "";
 		break;
 	case 1:
 		this->Sistema->CadDepartamento(AnsiString(this->Edit1->Text).c_str(), AnsiString(this->Edit2->Text).c_str());
+		this->Edit2->Text = "";
 		break;
 	case 2:
 		this->Sistema->CadDisciplina(AnsiString(this->Edit1->Text).c_str(), AnsiString(this->Edit2->Text).c_str());

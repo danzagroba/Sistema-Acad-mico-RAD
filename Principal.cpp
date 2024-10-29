@@ -14,6 +14,7 @@
 #include "Principal.h"
 
 #include <fstream>
+#include <windows.h>
 
 using std::cout;
 using std::endl;
@@ -51,13 +52,34 @@ void Principal::CadUniversidade(const char* univ)
 
 void Principal::CadDepartamento(const char* univ, const char* depart)
 {
-	Universidade* puniv = LUniversidades.localizar(univ);
-	if (puniv != NULL)
+	if (univ != NULL && std::strcmp(univ, "") != 0)
 	{
-		Departamento* pdepart = new Departamento(cont_idDepart++);
-		pdepart->setNome(depart);
-		puniv->incluaDepartamento(pdepart);
-		LDepartamentos.incluaDepartamento(pdepart);
+		if(depart != NULL && std::strcmp(depart, "") != 0)
+		{
+			Universidade* puniv = LUniversidades.localizar(univ);
+			if(puniv != NULL)
+			{
+                Departamento* pdepart = new Departamento(cont_idDepart++);
+				pdepart->setNome(depart);
+				puniv->incluaDepartamento(pdepart);
+				LDepartamentos.incluaDepartamento(pdepart);
+			}
+			else
+			{
+				// Mensagem de aviso
+				MessageDlg("A universidade não está cadastrada", mtWarning, TMsgDlgButtons() << mbOK, 0);
+			}
+		}
+		else
+		{
+			// Mensagem de aviso
+			MessageDlg("O campo de departamento está vazio", mtWarning, TMsgDlgButtons() << mbOK, 0);
+		}
+	}
+	else
+	{
+		// Mensagem de aviso
+		MessageDlg("O campo da universidade está vazio", mtWarning, TMsgDlgButtons() << mbOK, 0);
 	}
 }
 

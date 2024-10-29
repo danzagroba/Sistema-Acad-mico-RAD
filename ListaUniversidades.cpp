@@ -16,8 +16,13 @@ void ListaUniversidades::incluaUniversidade(Universidade* pdi)
 Universidade* ListaUniversidades::localizar(const char* univ)
 {
 	IteradorLUniversidades = LUniversidades.begin();
-	while(((*(IteradorLUniversidades))->getNome().compare(univ))){
-		IteradorLUniversidades++;
-	}
-	return (*(IteradorLUniversidades));
+	while(IteradorLUniversidades != LUniversidades.end())
+	{
+		if((*(IteradorLUniversidades))->getNome().compare(univ) == 0)
+		{
+            return *(IteradorLUniversidades);
+		}
+        ++IteradorLUniversidades;
+    }
+	return NULL;
 }
