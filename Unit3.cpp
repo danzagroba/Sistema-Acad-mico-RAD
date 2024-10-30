@@ -12,6 +12,9 @@ TFrame3 *Frame3;
 __fastcall TFrame3::TFrame3(TComponent* Owner)
 	: TFrame(Owner)
 {
+    Edit1->OnKeyPress = EditKeyPress;
+	Edit2->OnKeyPress = EditKeyPress;
+    Edit3->OnKeyPress = EditKeyPress;
 }
 
 void TFrame3::setCadastro(int type)
@@ -87,6 +90,15 @@ void __fastcall TFrame3::Button1Click(TObject *Sender)
 		break;
 	default:
 		;
+	}
+}
+
+void __fastcall TFrame3::EditKeyPress(TObject *Sender, System::WideChar &Key)
+{
+	if (Key == VK_RETURN)
+	{
+		Button1->Click();
+        Key = 0;
 	}
 }
 //---------------------------------------------------------------------------
