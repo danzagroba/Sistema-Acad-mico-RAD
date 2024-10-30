@@ -38,9 +38,18 @@ void Principal::CadUniversidade(const char* univ)
 {
 	if(univ != NULL && std::strcmp(univ, "") != 0)
 	{
-		Universidade* puniv = new Universidade(cont_idUniv++);
-		puniv->setNome(univ);
-		LUniversidades.incluaUniversidade(puniv);
+		if(LUniversidades.localizar(univ) == NULL)
+		{
+            Universidade* puniv = new Universidade(cont_idUniv++);
+			puniv->setNome(univ);
+			LUniversidades.incluaUniversidade(puniv);
+            ShowMessage("Universidade cadastrada!");
+		}
+		else
+		{
+            // Mensagem de aviso
+			MessageDlg("Essa universidade já está cadastrada", mtWarning, TMsgDlgButtons() << mbOK, 0);
+        }
 	}
 	else
 	{
@@ -58,10 +67,19 @@ void Principal::CadDepartamento(const char* univ, const char* depart)
 			Universidade* puniv = LUniversidades.localizar(univ);
 			if(puniv != NULL)
 			{
-                Departamento* pdepart = new Departamento(cont_idDepart++);
-				pdepart->setNome(depart);
-				puniv->incluaDepartamento(pdepart);
-				LDepartamentos.incluaDepartamento(pdepart);
+				if(LDepartamentos.localizar(depart) == NULL)
+				{
+                    Departamento* pdepart = new Departamento(cont_idDepart++);
+					pdepart->setNome(depart);
+					puniv->incluaDepartamento(pdepart);
+					LDepartamentos.incluaDepartamento(pdepart);
+                    ShowMessage("Departamento cadastrado!");
+				}
+				else
+				{
+					// Mensagem de aviso
+					MessageDlg("Esse departamento já está cadastrado", mtWarning, TMsgDlgButtons() << mbOK, 0);
+                }
 			}
 			else
 			{
@@ -90,10 +108,19 @@ void Principal::CadDisciplina(const char* depart, const char* disci) {
 			Departamento* pdepart = LDepartamentos.localizar(depart);
 			if(pdepart != NULL)
 			{
-				Disciplina* pdisc = new Disciplina(cont_idDisc++);
-				pdisc->setNome(disci);
-				pdepart->incluaDisciplina(pdisc);
-				LDisciplinas.incluaDisciplina(pdisc);
+				if(LDisciplinas.localizar(disci) == NULL)
+				{
+                    Disciplina* pdisc = new Disciplina(cont_idDisc++);
+					pdisc->setNome(disci);
+					pdepart->incluaDisciplina(pdisc);
+					LDisciplinas.incluaDisciplina(pdisc);
+                    ShowMessage("Disciplina cadastrada!");
+				}
+				else
+				{
+                    // Mensagem de aviso
+					MessageDlg("Essa disciplina já está cadastrada", mtWarning, TMsgDlgButtons() << mbOK, 0);
+                }
 			}
 			else
 			{
@@ -131,6 +158,7 @@ void Principal::CadAluno(const char* disci, const char* aluno, int ra)
 					pal->setRA(ra);
 					pdisc->incluaAluno(pal);
 					LAlunos.incluaAluno(pal);
+                    ShowMessage("Aluno cadastrado!");
 				}
 				else
 				{

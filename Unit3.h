@@ -21,7 +21,6 @@ __published:	// IDE-managed Components
 	TEdit *Edit3;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall EditKeyPress(TObject *Sender, System::WideChar &Key);
-    void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 private:
 		// User declarations
 	int type;
