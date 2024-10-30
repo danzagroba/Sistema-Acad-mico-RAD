@@ -12,8 +12,13 @@ void ListaDepartamentos::incluaDepartamento(Departamento* pdi)
 Departamento* ListaDepartamentos::localizar(const char* n)
 {
 	IteradorLDepartamentos = LDepartamentos.begin();
-	while(((*(IteradorLDepartamentos))->getNome().compare(n))){
-		IteradorLDepartamentos++;
-	}
-	return (*(IteradorLDepartamentos));
+	while(IteradorLDepartamentos != LDepartamentos.end())
+	{
+		if((*(IteradorLDepartamentos))->getNome().compare(n) == 0)
+		{
+			return *(IteradorLDepartamentos);
+		}
+		++IteradorLDepartamentos;
+    }
+	return NULL;
 }

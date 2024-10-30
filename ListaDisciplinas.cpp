@@ -16,8 +16,13 @@ void ListaDisciplinas::incluaDisciplina(Disciplina* pdi)
 Disciplina* ListaDisciplinas::localizar(const char* n)
 {
 	IteradorLDisciplinas = LDisciplinas.begin();
-	while(((*(IteradorLDisciplinas))->getNome().compare(n))){
-		IteradorLDisciplinas++;
-	}
-	return (*(IteradorLDisciplinas));
+	while(IteradorLDisciplinas != LDisciplinas.end())
+	{
+		if((*(IteradorLDisciplinas))->getNome().compare(n) == 0)
+		{
+			return *(IteradorLDisciplinas);
+		}
+		++IteradorLDisciplinas;
+    }
+	return NULL;
 }

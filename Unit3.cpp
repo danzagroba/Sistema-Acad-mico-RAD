@@ -69,9 +69,21 @@ void __fastcall TFrame3::Button1Click(TObject *Sender)
 		break;
 	case 2:
 		this->Sistema->CadDisciplina(AnsiString(this->Edit1->Text).c_str(), AnsiString(this->Edit2->Text).c_str());
+        this->Edit2->Text = "";
 		break;
 	case 3:
-		this->Sistema->CadAluno(AnsiString(this->Edit1->Text).c_str(), AnsiString(this->Edit2->Text).c_str(), this->Edit3->Text.ToInt());
+        int valorRA;
+		try
+		{
+			valorRA = this->Edit3->Text.ToInt();
+		}
+		catch(const Exception &e)
+		{
+            valorRA = NULL;
+		}
+		this->Sistema->CadAluno(AnsiString(this->Edit1->Text).c_str(), AnsiString(this->Edit2->Text).c_str(), valorRA);
+		this->Edit2->Text = "";
+        this->Edit3->Text = "";
 		break;
 	default:
 		;

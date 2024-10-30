@@ -14,7 +14,6 @@
 #include "Principal.h"
 
 #include <fstream>
-#include <windows.h>
 
 using std::cout;
 using std::endl;
@@ -84,27 +83,77 @@ void Principal::CadDepartamento(const char* univ, const char* depart)
 }
 
 void Principal::CadDisciplina(const char* depart, const char* disci) {
-	Departamento* pdepart = LDepartamentos.localizar(depart);
-	if (pdepart != NULL)
+	if (depart != NULL && std::strcmp(depart, "") != 0)
 	{
-		Disciplina* pdisc = new Disciplina(cont_idDisc++);
-		pdisc->setNome(disci);
-		pdepart->incluaDisciplina(pdisc);
-		LDisciplinas.incluaDisciplina(pdisc);
+		if(disci != NULL && std::strcmp(disci, "") != 0)
+		{
+			Departamento* pdepart = LDepartamentos.localizar(depart);
+			if(pdepart != NULL)
+			{
+				Disciplina* pdisc = new Disciplina(cont_idDisc++);
+				pdisc->setNome(disci);
+				pdepart->incluaDisciplina(pdisc);
+				LDisciplinas.incluaDisciplina(pdisc);
+			}
+			else
+			{
+				// Mensagem de aviso
+				MessageDlg("O departamento não está cadastrado", mtWarning, TMsgDlgButtons() << mbOK, 0);
+			}
+		}
+		else
+		{
+			// Mensagem de aviso
+			MessageDlg("O campo da disciplina está vazio", mtWarning, TMsgDlgButtons() << mbOK, 0);
+		}
 	}
+	else
+	{
+		// Mensagem de aviso
+		MessageDlg("O campo de departamento está vazio", mtWarning, TMsgDlgButtons() << mbOK, 0);
+    }
 }
 
 void Principal::CadAluno(const char* disci, const char* aluno, int ra)
 {
 	Aluno* pal;
-	Disciplina* pdisc = LDisciplinas.localizar(disci);
-	if (pdisc != NULL)
+	if(disci != NULL && std::strcmp(disci, "") != 0)
 	{
-		pal = new Aluno(cont_idAluno++);
-		pal->setNome(aluno);
-		pal->setRA(ra);
-		pdisc->incluaAluno(pal);
-		LAlunos.incluaAluno(pal);
+		if(aluno != NULL && std::strcmp(aluno, "") != 0)
+		{
+			if(ra != NULL)
+			{
+				Disciplina* pdisc = LDisciplinas.localizar(disci);
+				if(pdisc != NULL)
+				{
+					pal = new Aluno(cont_idAluno++);
+					pal->setNome(aluno);
+					pal->setRA(ra);
+					pdisc->incluaAluno(pal);
+					LAlunos.incluaAluno(pal);
+				}
+				else
+				{
+					// Mensagem de aviso
+					MessageDlg("A disciplina não está cadastrada", mtWarning, TMsgDlgButtons() << mbOK, 0);
+				}
+			}
+			else
+			{
+                // Mensagem de aviso
+				MessageDlg("RA inválido", mtWarning, TMsgDlgButtons() << mbOK, 0);
+            }
+		}
+		else
+		{
+			// Mensagem de aviso
+			MessageDlg("O campo de aluno está vazio", mtWarning, TMsgDlgButtons() << mbOK, 0);
+		}
+	}
+	else
+	{
+		// Mensagem de aviso
+		MessageDlg("O campo da disciplina está vazio", mtWarning, TMsgDlgButtons() << mbOK, 0);
 	}
 }
 // funcoes para a gravacao de objetos em arquivo
