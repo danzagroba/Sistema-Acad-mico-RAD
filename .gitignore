@@ -22,3 +22,5 @@ release/
 *.tmp
 *.tds
 *.pdb
+__history/Unit1.cpp.~20~
+/__history

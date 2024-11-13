@@ -186,14 +186,15 @@ void Principal::CadAluno(const char* disci, const char* aluno, int ra)
 }
 // funcoes para a gravacao de objetos em arquivo
 void Principal::GravarTudo() {
-	GravarUniversidades();
-	GravarDepartamentos();
-	GravarDisciplinas();
-	GravarAlunos();
+	GravarUniversidades(false);
+	GravarDepartamentos(false);
+	GravarDisciplinas(false);
+	GravarAlunos(false);
+	ShowMessage("Todo sistema acadêmico salvo!");
 }
-void Principal::GravarUniversidades() {
+void Principal::GravarUniversidades(bool print) {
 	std::ofstream out("universidades.dat", std::ios::out);
-	if (out) {
+	if (out.is_open()) {
 		IteradorLUniversidades = LUniversidades.LUniversidades.begin();
 
 		while (IteradorLUniversidades!= LUniversidades.LUniversidades.end())
@@ -202,13 +203,23 @@ void Principal::GravarUniversidades() {
 			out << str << (*(IteradorLUniversidades))->getId() << endl;
 			IteradorLUniversidades++;
 		}
-			
+
+		out.close();
+
+		if(print)
+		{
+			ShowMessage("Universidades gravadas!");
+		}
 	}
-	out.close();
+	else
+	{
+        MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+	}
 }
-void Principal::GravarDepartamentos() {
+void Principal::GravarDepartamentos(bool print) {
 	std::ofstream out("departamentos.dat", std::ios::out);
-	if (out) {
+
+	if (out.is_open()) {
 		IteradorLDepartamentos = LDepartamentos.LDepartamentos.begin();
 		while (IteradorLDepartamentos!= LDepartamentos.LDepartamentos.end()) {
 			Departamento* aux = (*(IteradorLDepartamentos));
@@ -216,12 +227,22 @@ void Principal::GravarDepartamentos() {
 			out << str << endl;
 			IteradorLDepartamentos++;
 		}
+
+        out.close();
+
+		if(print)
+		{
+			ShowMessage("Departamentos gravados!");
+		}
 	}
-	out.close();
+    else
+	{
+		MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+	}
 }
-void Principal::GravarDisciplinas() {
+void Principal::GravarDisciplinas(bool print) {
 	std::ofstream out("disciplinas.dat", std::ios::out);
-	if (out) {
+	if (out.is_open()) {
 		IteradorLDisciplinas = LDisciplinas.LDisciplinas.begin();
 		while (IteradorLDisciplinas!= LDisciplinas.LDisciplinas.end()) {
 			Disciplina* aux = (*(IteradorLDisciplinas));
@@ -229,10 +250,18 @@ void Principal::GravarDisciplinas() {
 			out << str << endl;
 			IteradorLDisciplinas++;
 		}
+        out.close();
+		if(print)
+		{
+			ShowMessage("Disciplinas gravadas!");
+		}
 	}
-	out.close();
+	else
+	{
+		 MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+    }
 }
-void Principal::GravarAlunos() {
+void Principal::GravarAlunos(bool print) {
 	std::ofstream out("alunos.dat", std::ios::out);
 	if (out) {
 		IteradorLAlunos = LAlunos.LAlunos.begin();
@@ -242,8 +271,17 @@ void Principal::GravarAlunos() {
 			out << str << endl;
 			IteradorLAlunos++;
 		}
+
+        out.close();
+		if(print)
+		{
+			ShowMessage("Alunos gravados!");
+		}
 	}
-	out.close();
+	else
+	{
+        MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+    }
 }
 // auncoes para a recuperacao de objetos em arquivo
 void Principal::RecuperarTudo() {
@@ -251,10 +289,12 @@ void Principal::RecuperarTudo() {
 	RecuperarDepartamentos();
 	RecuperarDisciplinas();
 	RecuperarAlunos();
+    ShowMessage("Sistema acadêmico recuperado!");
+
 }
 void Principal::RecuperarUniversidades() {
 	std::ifstream in("universidades.dat", std::ios::in);
-	if (in) {
+	if (in.is_open()) {
 		char nome[150];
 		int id;
 		while (in >> nome >> id) {
@@ -263,12 +303,16 @@ void Principal::RecuperarUniversidades() {
 			LUniversidades.incluaUniversidade(puniv);
 			cont_idUniv++;
 		}
+		in.close();
 	}
-	in.close();
+	else
+	{
+		MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+	}
 }
 void Principal::RecuperarDepartamentos() {
 	std::ifstream in("departamentos.dat", std::ios::in);
-	if (in) {
+	if (in.is_open()) {
 		char nome[150], nomeuniv[150];
 		int id;
 		while (in >> nome >> id >> nomeuniv) {
@@ -281,12 +325,16 @@ void Principal::RecuperarDepartamentos() {
 				cont_idDepart++;
 			}
 		}
+		in.close();
 	}
-	in.close();
+    else
+	{
+		MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+	}
 }
 void Principal::RecuperarDisciplinas() {
 	std::ifstream in("disciplinas.dat", std::ios::in);
-	if (in) {
+	if (in.is_open()) {
 		char nome[150], nomedep[150];
 		int id;
 		while (in >> nome >> id >> nomedep) {
@@ -299,12 +347,16 @@ void Principal::RecuperarDisciplinas() {
 				cont_idDisc++;
 			}
 		}
+        in.close();
 	}
-	in.close();
+	else
+	{
+		MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+	}
 }
 void Principal::RecuperarAlunos() {
 	std::ifstream in("alunos.dat", std::ios::in);
-	if (in) {
+	if (in.is_open()) {
 		char nome[150], nomedisc[150];
 		int id, RA;
 		while (in >> nome >> RA >> id >> nomedisc) {
@@ -318,6 +370,10 @@ void Principal::RecuperarAlunos() {
 				cont_idAluno++;
 			}
 		}
+		in.close();
 	}
-	in.close();
+    else
+	{
+		MessageDlg("Erro ao abrir o arquivo!", mtWarning, TMsgDlgButtons() << mbOK, 0);
+	}
 }

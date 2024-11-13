@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 366
+  ClientHeight = 391
   ClientWidth = 668
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -37,13 +37,19 @@ object Form1: TForm1
       StyleElements = [seFont, seClient, seBorder]
     end
     inherited Edit1: TEdit
+      Height = 21
       StyleElements = [seFont, seClient, seBorder]
+      ExplicitHeight = 21
     end
     inherited Edit2: TEdit
+      Height = 21
       StyleElements = [seFont, seClient, seBorder]
+      ExplicitHeight = 21
     end
     inherited Edit3: TEdit
+      Height = 21
       StyleElements = [seFont, seClient, seBorder]
+      ExplicitHeight = 21
     end
   end
   inline Frame21: TFrame2
@@ -121,44 +127,12 @@ object Form1: TForm1
         Caption = 'Tudo'
         OnClick = Salvar2Click
       end
-      object Universidades1: TMenuItem
-        Caption = 'Universidades'
-        OnClick = Universidades1Click
-      end
-      object Universidades2: TMenuItem
-        Caption = 'Departamentos'
-        OnClick = Universidades2Click
-      end
-      object Disciplinas1: TMenuItem
-        Caption = 'Disciplinas'
-        OnClick = Disciplinas1Click
-      end
-      object Disciplinas2: TMenuItem
-        Caption = 'Alunos'
-        OnClick = Disciplinas2Click
-      end
     end
     object Recuperar1: TMenuItem
       Caption = 'Recuperar'
       object Recuperar2: TMenuItem
         Caption = 'Tudo'
         OnClick = Recuperar2Click
-      end
-      object Universidades3: TMenuItem
-        Caption = 'Universidades'
-        OnClick = Universidades3Click
-      end
-      object Universidades4: TMenuItem
-        Caption = 'Departamentos'
-        OnClick = Universidades4Click
-      end
-      object Disciplinas3: TMenuItem
-        Caption = 'Disciplinas'
-        OnClick = Disciplinas3Click
-      end
-      object Disciplinas4: TMenuItem
-        Caption = 'Alunos'
-        OnClick = Disciplinas4Click
       end
     end
   end

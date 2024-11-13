@@ -16,32 +16,32 @@
 class TForm1 : public TForm
 {
 __published:	// IDE-managed Components
+	//TMenuItem *Universidades1;
+	//TMenuItem *Universidades2;
+	//TMenuItem *Disciplinas1;
+	//TMenuItem *Disciplinas2;
+	//TMenuItem *Universidades3;
+	//TMenuItem *Universidades4;
+	//TMenuItem *Disciplinas3;
+	//TMenuItem *Disciplinas4;
+	TFrame3 *Frame31;
+	TFrame2 *Frame21;
 	TMainMenu *Menu;
 	TMenuItem *Cadastrar1;
 	TMenuItem *Universidade1;
-	TMenuItem *Universidade2;
 	TMenuItem *Departamento1;
 	TMenuItem *Departamento2;
+	TMenuItem *Universidade2;
 	TMenuItem *Listar1;
+	TMenuItem *udo1;
 	TMenuItem *Listar2;
 	TMenuItem *Departamento3;
 	TMenuItem *Departamento4;
 	TMenuItem *Professor2;
-	TMenuItem *udo1;
 	TMenuItem *Salvar1;
 	TMenuItem *Salvar2;
 	TMenuItem *Recuperar1;
 	TMenuItem *Recuperar2;
-	TMenuItem *Universidades1;
-	TMenuItem *Universidades2;
-	TMenuItem *Disciplinas1;
-	TMenuItem *Disciplinas2;
-	TMenuItem *Universidades3;
-	TMenuItem *Universidades4;
-	TMenuItem *Disciplinas3;
-	TMenuItem *Disciplinas4;
-	TFrame3 *Frame31;
-	TFrame2 *Frame21;
 	void __fastcall Universidade1Click(TObject *Sender);
 	void __fastcall Departamento1Click(TObject *Sender);
 	void __fastcall Departamento2Click(TObject *Sender);
@@ -52,15 +52,17 @@ __published:	// IDE-managed Components
 	void __fastcall Professor2Click(TObject *Sender);
 	void __fastcall udo1Click(TObject *Sender);
 	void __fastcall Salvar2Click(TObject *Sender);
-	void __fastcall Universidades1Click(TObject *Sender);
-	void __fastcall Universidades2Click(TObject *Sender);
-	void __fastcall Disciplinas1Click(TObject *Sender);
-	void __fastcall Disciplinas2Click(TObject *Sender);
+    //RETIRADOS POIS QUEBRAM PRINCIPIO DE PERSISTÊNCIA DE RELACIONAMENTOS DE OBJETOS
+	//void __fastcall Universidades1Click(TObject *Sender);
+	//void __fastcall Universidades2Click(TObject *Sender);
+	//void __fastcall Disciplinas1Click(TObject *Sender);
+	//void __fastcall Disciplinas2Click(TObject *Sender);
 	void __fastcall Recuperar2Click(TObject *Sender);
-	void __fastcall Universidades3Click(TObject *Sender);
-	void __fastcall Universidades4Click(TObject *Sender);
-	void __fastcall Disciplinas3Click(TObject *Sender);
-	void __fastcall Disciplinas4Click(TObject *Sender);
+    //RETIRADOS POIS QUEBRAM PRINCIPIO DE PERSISTÊNCIA DE RELACIONAMENTOS DE OBJETOS
+	//void __fastcall Universidades3Click(TObject *Sender);
+	//void __fastcall Universidades4Click(TObject *Sender);
+	//void __fastcall Disciplinas3Click(TObject *Sender);
+	//void __fastcall Disciplinas4Click(TObject *Sender);
 private:
 	void tirarVisible();	// User declarations
 public:		// User declarations

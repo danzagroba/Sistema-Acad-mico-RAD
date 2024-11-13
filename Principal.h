@@ -26,10 +26,10 @@ public:
 	void CadUniversidade(const char* univ);
 	void CadAluno(const char* disci, const char* aluno, int ra);
 	void GravarTudo();
-	void GravarUniversidades();
-	void GravarDepartamentos();
-	void GravarDisciplinas();
-	void GravarAlunos();
+	void GravarUniversidades(bool print = true);
+	void GravarDepartamentos(bool print = true);
+	void GravarDisciplinas(bool print = true);
+	void GravarAlunos(bool print = true);
 	void RecuperarTudo();
 	void RecuperarUniversidades();
 	void RecuperarDepartamentos();

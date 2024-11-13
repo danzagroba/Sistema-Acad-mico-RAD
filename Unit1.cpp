@@ -110,7 +110,7 @@ void __fastcall TForm1::Salvar2Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Universidades1Click(TObject *Sender)
+/*void __fastcall TForm1::Universidades1Click(TObject *Sender)
 {
 	this->Sistema->GravarUniversidades();
 }
@@ -133,14 +133,14 @@ void __fastcall TForm1::Disciplinas2Click(TObject *Sender)
 	this->Sistema->GravarAlunos();
 }
 //---------------------------------------------------------------------------
-
+*/
 void __fastcall TForm1::Recuperar2Click(TObject *Sender)
 {
 	this->Sistema->RecuperarTudo();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Universidades3Click(TObject *Sender)
+/*void __fastcall TForm1::Universidades3Click(TObject *Sender)
 {
 	this->Sistema->RecuperarUniversidades();
 }
@@ -163,5 +163,8 @@ void __fastcall TForm1::Disciplinas4Click(TObject *Sender)
 	this->Sistema->RecuperarAlunos();
 }
 //---------------------------------------------------------------------------
+*/
+
+
 
 
