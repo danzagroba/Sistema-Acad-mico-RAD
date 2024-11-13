@@ -18,7 +18,7 @@ Me chamo Daniel I. Zagroba e sou o monitor atual(2o semestre de 2024) de TecProg
 
 Objetivos principais:
 - Melhorar funcionalidades gerais, como informar quando apropriadamente o usuário quando uma universidade, departamento etc for cadastrado;
-  (Parcialmente feito, falta informar ao salvar e recuparar informações)
+  (Feito)
 - Não permitir q o usuário insira algo sem nome.
   (Feito)
 - Avisar usuário nas falhas durante os cadastros.
@@ -26,16 +26,16 @@ Objetivos principais:
 - Tirar o texto quando o botão ou enter é apertado de forma que não necessite ficar apagando e escrevendo de novo;
   (Feito)
 - Consertar o "listar tudo" que não lista nada aparentemente;
-  (Não feito)
+  (Feito)
 - Não permitir que mais de uma universidade com mesmo nome seja inserida, e o mesmo para com seus departamentos e disciplinas;
   (Feito)
 - Não permitir que alunos com mesmo RA sejam inseridos
   (Não feito)
 - Fazer com que possa ser adicionados departamentos e disciplinas de mesmo nome em universidades diferentes;
-  (Não feito)
+  (Não feito/Ver possibilidade)
 - Corrigir para que quando o texto da caixa estiver vazio ele n dê erro acessando memória indevida;
-  (Não feito)
+  (Feito)
 - Se tentar recuperar o tudo tendo salvado outra opção dá erro;
-  (Não feito)
+  (Resolvido tirando as outras opções de recuperar e salvar, que feriam o princípio de persistência de relacionamento dos objetos)
 - Consertar o salvar do departamento, pois ainda não funciona nem o de disciplina e o de aluno, ou respectivamente seus "recuperar".
-  (Não feito)
+  (Resolvido tirando as outras opções de recuperar e salvar, que feriam o princípio de persistência de relacionamento dos objetos)

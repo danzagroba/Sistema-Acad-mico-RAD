@@ -45,6 +45,7 @@ void TFrame2::setList(int type)
 	case 4:
 		ListBox2->Visible=false;
 		this->Label1->Caption="Tudo";
+        listaTudo();
 		break;
 	default:
 		;
@@ -52,6 +53,13 @@ void TFrame2::setList(int type)
 
 }
 
+void TFrame2::listaTudo()
+{
+	 listaUniv();
+	 listaDept();
+	 listaDisc();
+     listaAlun();
+}
 
 void TFrame2::listaUniv(){
     this->Sistema->IteradorLUniversidades = Sistema->LUniversidades.LUniversidades.begin();
