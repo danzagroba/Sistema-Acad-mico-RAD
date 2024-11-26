@@ -11,7 +11,7 @@ void ListaDepartamentos::incluaDepartamento(Departamento* pdi)
 // localiza uma universidade de nome "n" na lista de universidades
 Departamento* ListaDepartamentos::localizar(const char* n)
 {
-	IteradorLDepartamentos = LDepartamentos.begin();
+	std::list<Departamento*>::iterator IteradorLDepartamentos = LDepartamentos.begin();
 	while(IteradorLDepartamentos != LDepartamentos.end())
 	{
 		if((*(IteradorLDepartamentos))->getNome().compare(n) == 0)
@@ -21,4 +21,13 @@ Departamento* ListaDepartamentos::localizar(const char* n)
 		++IteradorLDepartamentos;
     }
 	return NULL;
+}
+
+std::list<Departamento*>::iterator ListaDepartamentos::getBegin()
+{
+	return LDepartamentos.begin();
+}
+std::list<Departamento*>::iterator ListaDepartamentos::getEnd()
+{
+	return LDepartamentos.end();
 }

@@ -62,64 +62,63 @@ void TFrame2::listaTudo()
 }
 
 void TFrame2::listaUniv(){
-    this->Sistema->IteradorLUniversidades = Sistema->LUniversidades.LUniversidades.begin();
 
-	while (Sistema->IteradorLUniversidades!= Sistema->LUniversidades.LUniversidades.end())
+	std::list<Universidade*>::iterator IteradorLUniversidades = Sistema->LUniversidades.getBegin();
+	while (IteradorLUniversidades!= Sistema->LUniversidades.getEnd())
 	{
 		string aux;
-		aux = (*(Sistema->IteradorLUniversidades))->getNome();
+		aux = (*IteradorLUniversidades)->getNome();
 		AnsiString NomeUniv;
 		NomeUniv = aux.data();
 
 		ListBox1->Items->Add(NomeUniv);
-		Sistema->IteradorLUniversidades++;
+		IteradorLUniversidades++;
 	}
 }
 
 void TFrame2::listaDept(){
-	this->Sistema->IteradorLDepartamentos = Sistema->LDepartamentos.LDepartamentos.begin();
-
-	while (Sistema->IteradorLDepartamentos!= Sistema->LDepartamentos.LDepartamentos.end())
+	std::list<Departamento*>::iterator IteradorLDepartamentos = Sistema->LDepartamentos.getBegin();
+	while (IteradorLDepartamentos!= Sistema->LDepartamentos.getEnd())
 	{
 		string aux;
-		VDepartamentos.push_back((*(Sistema->IteradorLDepartamentos))->getNome());
-		aux = (*(Sistema->IteradorLDepartamentos))->getNome() + std::string(" da ") + (*(Sistema->IteradorLDepartamentos))->getUniversidade()->getNome();
+		VDepartamentos.push_back((*(IteradorLDepartamentos))->getNome());
+		aux = (*(IteradorLDepartamentos))->getNome() + std::string(" da ") + (*(IteradorLDepartamentos))->getUniversidade()->getNome();
 		AnsiString NomeDept;
 		NomeDept = aux.data();
 
 		ListBox1->Items->Add(NomeDept);
-		Sistema->IteradorLDepartamentos++;
+		IteradorLDepartamentos++;
 	}
 }
 
 void TFrame2::listaDisc(){
-	this->Sistema->IteradorLDisciplinas = Sistema->LDisciplinas.LDisciplinas.begin();
+	list<Disciplina*>::iterator IteradorLDisciplinas = Sistema->LDisciplinas.getBegin();
 
-	while (Sistema->IteradorLDisciplinas!= Sistema->LDisciplinas.LDisciplinas.end())
+	while (IteradorLDisciplinas != Sistema->LDisciplinas.getEnd())
 	{
 		string aux;
-		VDisciplinas.push_back((*(Sistema->IteradorLDisciplinas))->getNome());
-		aux = (*(Sistema->IteradorLDisciplinas))->getNome() + std::string(" do Departamento ") + (*(Sistema->IteradorLDisciplinas))->getDepartamento()->getNome();
+		VDisciplinas.push_back((*(IteradorLDisciplinas))->getNome());
+		aux = (*(IteradorLDisciplinas))->getNome() + std::string(" do Departamento ") + (*(IteradorLDisciplinas))->getDepartamento()->getNome();
 		AnsiString NomeDisc;
 		NomeDisc = aux.data();
 
 		ListBox1->Items->Add(NomeDisc);
-		Sistema->IteradorLDisciplinas++;
+		IteradorLDisciplinas++;
 	}
 }
 
 void TFrame2::listaAlun(){
-	this->Sistema->IteradorLAlunos = Sistema->LAlunos.LAlunos.begin();
+	std::list<Aluno*>::iterator IteradorLAlunos = Sistema->LAlunos.getBegin();
 
-	while (Sistema->IteradorLAlunos!= Sistema->LAlunos.LAlunos.end())
+	while (IteradorLAlunos!= Sistema->LAlunos.getEnd())
 	{
 		string aux;
-		aux = (*(Sistema->IteradorLAlunos))->getNome();
+		aux = (*(IteradorLAlunos))->getNome();
 		AnsiString NomeAluno;
 		NomeAluno = aux.data();
 
 		ListBox1->Items->Add(NomeAluno);
-		Sistema->IteradorLAlunos++;
+		IteradorLAlunos++;
 	}
 }
 
@@ -154,21 +153,21 @@ void TFrame2::listaUnivDept(){
 
 	Universidade* pUniv = NULL;
 
-	Sistema->IteradorLUniversidades = Sistema->LUniversidades.LUniversidades.begin();
+	std::list<Universidade*>::iterator IteradorLUniversidades = Sistema->LUniversidades.getBegin();
 
-	while (Sistema->IteradorLUniversidades!= Sistema->LUniversidades.LUniversidades.end())
+	while (IteradorLUniversidades!= Sistema->LUniversidades.getEnd())
 	{
 		string aux;
-		aux = (*(Sistema->IteradorLUniversidades))->getNome();
+		aux = (*IteradorLUniversidades)->getNome();
 
 		AnsiString NomeAux = aux.data();
 		if ( NomeUniv == NomeAux )
 		{
-			pUniv = *(Sistema->IteradorLUniversidades);
+			pUniv = *(IteradorLUniversidades);
 			break;
 		}
 
-		Sistema->IteradorLUniversidades++;
+		IteradorLUniversidades++;
 	}
 
 	if (pUniv)
@@ -192,20 +191,20 @@ void TFrame2::listaDeptDisc(){
 	NomeDept = VDepartamentos[pos];
 	Departamento* pDept = NULL;
 
-	Sistema->IteradorLDepartamentos = Sistema->LDepartamentos.LDepartamentos.begin();
+	std::list<Departamento*>::iterator IteradorLDepartamentos = Sistema->LDepartamentos.getBegin();
 
-	while (Sistema->IteradorLDepartamentos!= Sistema->LDepartamentos.LDepartamentos.end())
+	while (IteradorLDepartamentos!= Sistema->LDepartamentos.getEnd())
 	{
 		string aux;
-		aux = (*(Sistema->IteradorLDepartamentos))->getNome();
+		aux = (*(IteradorLDepartamentos))->getNome();
 
 		if ( NomeDept == aux )
 		{
-			pDept = *(Sistema->IteradorLDepartamentos);
+			pDept = *(IteradorLDepartamentos);
 			break;
 		}
 
-		Sistema->IteradorLDepartamentos++;
+		IteradorLDepartamentos++;
 	}
 
 	if (pDept)
@@ -230,20 +229,20 @@ void TFrame2::listaDiscAlun(){
 
 	Disciplina* pDisc = NULL;
 
-	Sistema->IteradorLDisciplinas = Sistema->LDisciplinas.LDisciplinas.begin();
+	list<Disciplina*>::iterator IteradorLDisciplinas = Sistema->LDisciplinas.getBegin();
 
-	while (Sistema->IteradorLDisciplinas!= Sistema->LDisciplinas.LDisciplinas.end())
+	while (IteradorLDisciplinas!= Sistema->LDisciplinas.getEnd())
 	{
 		string aux;
-		aux = (*(Sistema->IteradorLDisciplinas))->getNome();
+		aux = (*(IteradorLDisciplinas))->getNome();
 
 		if ( NomeDisc == aux )
 		{
-			pDisc = *(Sistema->IteradorLDisciplinas);
+			pDisc = *(IteradorLDisciplinas);
 			break;
 		}
 
-		Sistema->IteradorLDisciplinas++;
+		IteradorLDisciplinas++;
 	}
 
 	if (pDisc)

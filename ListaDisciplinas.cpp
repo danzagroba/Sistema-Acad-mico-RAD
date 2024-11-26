@@ -15,7 +15,7 @@ void ListaDisciplinas::incluaDisciplina(Disciplina* pdi)
 // localiza uma disciplina de nome "n" na lista de disciplinas
 Disciplina* ListaDisciplinas::localizar(const char* n)
 {
-	IteradorLDisciplinas = LDisciplinas.begin();
+	list<Disciplina*>::iterator IteradorLDisciplinas = LDisciplinas.begin();
 	while(IteradorLDisciplinas != LDisciplinas.end())
 	{
 		if((*(IteradorLDisciplinas))->getNome().compare(n) == 0)
@@ -25,4 +25,13 @@ Disciplina* ListaDisciplinas::localizar(const char* n)
 		++IteradorLDisciplinas;
     }
 	return NULL;
+}
+
+std::list<Disciplina*>::iterator ListaDisciplinas::getBegin()
+{
+	return LDisciplinas.begin();
+}
+std::list<Disciplina*>::iterator ListaDisciplinas::getEnd()
+{
+	return LDisciplinas.end();
 }

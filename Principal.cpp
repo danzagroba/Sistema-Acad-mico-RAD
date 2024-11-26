@@ -203,9 +203,9 @@ void Principal::GravarTudo() {
 void Principal::GravarUniversidades(bool print) {
 	std::ofstream out("universidades.dat", std::ios::out);
 	if (out.is_open()) {
-		IteradorLUniversidades = LUniversidades.LUniversidades.begin();
+		IteradorLUniversidades = LUniversidades.getBegin();
 
-		while (IteradorLUniversidades!= LUniversidades.LUniversidades.end())
+		while (IteradorLUniversidades!= LUniversidades.getEnd())
 		{
 			std::string str(((*(IteradorLUniversidades))->getNome() + std::string(" ")));
 			out << str << (*(IteradorLUniversidades))->getId() << endl;
@@ -228,8 +228,8 @@ void Principal::GravarDepartamentos(bool print) {
 	std::ofstream out("departamentos.dat", std::ios::out);
 
 	if (out.is_open()) {
-		IteradorLDepartamentos = LDepartamentos.LDepartamentos.begin();
-		while (IteradorLDepartamentos!= LDepartamentos.LDepartamentos.end()) {
+		std::list<Departamento*>::iterator IteradorLDepartamentos = LDepartamentos.getBegin();
+		while (IteradorLDepartamentos!= LDepartamentos.getEnd()) {
 			Departamento* aux = (*(IteradorLDepartamentos));
 			std::string str(aux->getNome() + std::string(" ") + std::to_string(aux->getId()) + std::string(" ") + aux->getUniversidade()->getNome());
 			out << str << endl;
@@ -251,8 +251,8 @@ void Principal::GravarDepartamentos(bool print) {
 void Principal::GravarDisciplinas(bool print) {
 	std::ofstream out("disciplinas.dat", std::ios::out);
 	if (out.is_open()) {
-		IteradorLDisciplinas = LDisciplinas.LDisciplinas.begin();
-		while (IteradorLDisciplinas!= LDisciplinas.LDisciplinas.end()) {
+		list<Disciplina*>::iterator IteradorLDisciplinas = LDisciplinas.getBegin();
+		while (IteradorLDisciplinas!= LDisciplinas.getEnd()) {
 			Disciplina* aux = (*(IteradorLDisciplinas));
 			std::string str(aux->getNome() + std::string(" ") + std::to_string(aux->getId()) + std::string(" ") + aux->getDepartamento()->getNome());
 			out << str << endl;
@@ -272,8 +272,8 @@ void Principal::GravarDisciplinas(bool print) {
 void Principal::GravarAlunos(bool print) {
 	std::ofstream out("alunos.dat", std::ios::out);
 	if (out) {
-		IteradorLAlunos = LAlunos.LAlunos.begin();
-		while (IteradorLAlunos!= LAlunos.LAlunos.end()) {
+		IteradorLAlunos = LAlunos.getBegin();
+		while (IteradorLAlunos!= LAlunos.getEnd()) {
 			Aluno* aux = (*(IteradorLAlunos));
 			std::string str(aux->getNome() + std::string(" ") + std::to_string(aux->getRA()) + std::string(" ") + std::to_string(aux->getId()) + std::string(" ") + aux->getDisciplina()->getNome());
 			out << str << endl;

@@ -5,10 +5,12 @@
 class ListaAlunos
 {
 private:
+    std::list<Aluno*> LAlunos;
 public:
 	ListaAlunos(int na = 45);
 	~ListaAlunos();
 	void incluaAluno(Aluno* pa);
-	std::list<Aluno*> LAlunos;
 	Aluno* localizar(int RA);
+	std::list<Aluno*>::iterator getBegin();
+	std::list<Aluno*>::iterator getEnd();
 };

@@ -7,11 +7,12 @@ using namespace std;
 class ListaDisciplinas
 {
 private:
+	list<Disciplina*> LDisciplinas;
 public:
 	ListaDisciplinas(int nd = 1000);
 	~ListaDisciplinas();
 	void incluaDisciplina(Disciplina* pdi);
 	Disciplina* localizar(const char* n);
-	list<Disciplina*> LDisciplinas;
-	list<Disciplina*>::iterator IteradorLDisciplinas;
+	std::list<Disciplina*>::iterator getBegin();
+	std::list<Disciplina*>::iterator getEnd();
 };

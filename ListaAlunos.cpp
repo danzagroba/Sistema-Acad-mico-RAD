@@ -26,3 +26,11 @@ Aluno* ListaAlunos::localizar(int RA)
 	}
 	return NULL;
 }
+std::list<Aluno*>::iterator ListaAlunos::getBegin()
+{
+	return LAlunos.begin();
+}
+std::list<Aluno*>::iterator ListaAlunos::getEnd()
+{
+	return LAlunos.end();
+}
