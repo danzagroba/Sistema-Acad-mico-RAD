@@ -10,4 +10,5 @@ public:
 	~ListaAlunos();
 	void incluaAluno(Aluno* pa);
 	std::list<Aluno*> LAlunos;
+	Aluno* localizar(int RA);
 };

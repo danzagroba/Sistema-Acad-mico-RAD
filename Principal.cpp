@@ -153,12 +153,20 @@ void Principal::CadAluno(const char* disci, const char* aluno, int ra)
 				Disciplina* pdisc = LDisciplinas.localizar(disci);
 				if(pdisc != NULL)
 				{
-					pal = new Aluno(cont_idAluno++);
-					pal->setNome(aluno);
-					pal->setRA(ra);
-					pdisc->incluaAluno(pal);
-					LAlunos.incluaAluno(pal);
-                    ShowMessage("Aluno cadastrado!");
+					if(LAlunos.localizar(ra)== NULL)
+					{
+						pal = new Aluno(cont_idAluno++);
+						pal->setNome(aluno);
+						pal->setRA(ra);
+						pdisc->incluaAluno(pal);
+						LAlunos.incluaAluno(pal);
+						ShowMessage("Aluno cadastrado!");
+					}
+					else
+					{
+                        // Mensagem de aviso
+						MessageDlg("Já existe aluno com tal RA", mtWarning, TMsgDlgButtons() << mbOK, 0);
+					}
 				}
 				else
 				{

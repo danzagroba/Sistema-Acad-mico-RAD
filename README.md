@@ -30,12 +30,14 @@ Objetivos principais:
 - Não permitir que mais de uma universidade com mesmo nome seja inserida, e o mesmo para com seus departamentos e disciplinas;
   (Feito)
 - Não permitir que alunos com mesmo RA sejam inseridos
-  (Não feito)
+  (Feito)
 - Fazer com que possa ser adicionados departamentos e disciplinas de mesmo nome em universidades diferentes;
   (Não feito/Ver possibilidade)
+- Deixar privado alguns dos atributos das listas
+  (Não feito)
 - Corrigir para que quando o texto da caixa estiver vazio ele n dê erro acessando memória indevida;
   (Feito)
 - Se tentar recuperar o tudo tendo salvado outra opção dá erro;
-  (Resolvido tirando as outras opções de recuperar e salvar, que feriam o princípio de persistência de relacionamento dos objetos)
+  (Resolvido tirando as outras opções de recuperar e salvar, que feriam a persistência de relacionamento dos objetos)
 - Consertar o salvar do departamento, pois ainda não funciona nem o de disciplina e o de aluno, ou respectivamente seus "recuperar".
-  (Resolvido tirando as outras opções de recuperar e salvar, que feriam o princípio de persistência de relacionamento dos objetos)
+  (Resolvido tirando as outras opções de recuperar e salvar, que feriam a persistência de relacionamento dos objetos)

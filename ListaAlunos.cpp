@@ -12,3 +12,17 @@ void ListaAlunos::incluaAluno(Aluno* pa)
 {
 	LAlunos.push_back(pa);
 }
+
+Aluno* ListaAlunos::localizar(int RA)
+{
+	std::list<Aluno*>::iterator IteradorLAlunos = LAlunos.begin();
+	while(IteradorLAlunos != LAlunos.end())
+	{
+		if((*(IteradorLAlunos))->getRA() == RA)
+		{
+			return *(IteradorLAlunos);
+		}
+		++IteradorLAlunos;
+	}
+	return NULL;
+}
