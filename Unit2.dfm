@@ -7,8 +7,8 @@ object Frame2: TFrame2
   object Label1: TLabel
     Left = 16
     Top = 16
-    Width = 31
-    Height = 13
+    Width = 34
+    Height = 15
     Caption = 'Label1'
   end
   object ListBox1: TListBox
@@ -31,7 +31,7 @@ object Frame2: TFrame2
     Top = 48
     Width = 257
     Height = 305
-    ItemHeight = 13
+    ItemHeight = 15
     TabOrder = 1
   end
 end

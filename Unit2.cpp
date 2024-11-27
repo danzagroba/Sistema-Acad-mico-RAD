@@ -139,9 +139,6 @@ void __fastcall TFrame2::ListBox1Click(TObject *Sender)
 	default:
 		break;
 	}
-
-
-
 }
 //---------------------------------------------------------------------------
 
@@ -149,6 +146,10 @@ void __fastcall TFrame2::ListBox1Click(TObject *Sender)
 void TFrame2::listaUnivDept(){
 	AnsiString NomeUniv;
 	int pos = ListBox1->ItemIndex;
+    if(pos == -1)
+	{
+        return;
+    }
 	NomeUniv = ListBox1->Items->operator [](pos);
 
 	Universidade* pUniv = NULL;
@@ -166,7 +167,6 @@ void TFrame2::listaUnivDept(){
 			pUniv = *(IteradorLUniversidades);
 			break;
 		}
-
 		IteradorLUniversidades++;
 	}
 
@@ -188,6 +188,10 @@ void TFrame2::listaUnivDept(){
 void TFrame2::listaDeptDisc(){
 	string NomeDept;
 	int pos = ListBox1->ItemIndex;
+	if(pos == -1)
+	{
+        return;
+    }
 	NomeDept = VDepartamentos[pos];
 	Departamento* pDept = NULL;
 
@@ -203,8 +207,7 @@ void TFrame2::listaDeptDisc(){
 			pDept = *(IteradorLDepartamentos);
 			break;
 		}
-
-		IteradorLDepartamentos++;
+        IteradorLDepartamentos++;
 	}
 
 	if (pDept)
@@ -225,6 +228,10 @@ void TFrame2::listaDeptDisc(){
 void TFrame2::listaDiscAlun(){
 	string NomeDisc;
 	int pos = ListBox1->ItemIndex;
+    if(pos == -1)
+	{
+        return;
+    }
 	NomeDisc = VDisciplinas[pos];
 
 	Disciplina* pDisc = NULL;
@@ -233,6 +240,7 @@ void TFrame2::listaDiscAlun(){
 
 	while (IteradorLDisciplinas!= Sistema->LDisciplinas.getEnd())
 	{
+
 		string aux;
 		aux = (*(IteradorLDisciplinas))->getNome();
 
@@ -259,3 +267,6 @@ void TFrame2::listaDiscAlun(){
 		}
 	}
 }
+
+//---------------------------------------------------------------------------
+
