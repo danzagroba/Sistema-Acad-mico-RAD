@@ -1,15 +1,6 @@
-// Data: 15/05/2017 - 1o Semestre de 2018
 // Prof. Dr. Jean M. Simao - DAINF/UTFPR Curitiba-Central
-// Autor: Monitor Vitor C. M. Correa
-
-// UNIVERSIDADE TECNOLOGICA FEDERAL DO PARANA - Campus de Curitiba Central
-// Departamento Academico de Informatica (DAINF)
-// Disciplina: Tecnicas de Programacao - CSE20
-// Sistema Academico - Slides 1 ao 8
-// Exemplo de referencia para os exercicios e atividades propostos em sala
-
-// Curso: Engenharia da Computacao / Sistemas de Informacao
-// Turma: S71 / S02.
+// Sistema original por: Monitor Vitor C. M. Correa
+// Modificado por: Daniel I. Zagroba
 
 #include "Principal.h"
 
